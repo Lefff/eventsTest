@@ -12,6 +12,7 @@ head
 body
 	.multiscroll.demo
 		.ms-left
+			//- jQuery click() VS on('click')
 			.ms-section.demo__on-click
 				.info-block.info-block_top
 					h2.heading .click()
@@ -31,10 +32,36 @@ body
 					.sand-area.awesome-button-wrap
 						a.awesome-button(href="#" data-num="1") Button
 
-			.ms-section Some section
-			.ms-section Some section
+			.ms-section
+				.info-block.info-block_top
+					h2.heading События клавиатуры
+					pre.code-example
+						code.language-javascript
+							| var keyViewBox = $('.key-show');
+							| 
+							| $( document ).on('keypress keydown keyup', function( e ) {
+							| 	keyViewBox.text( e.type + ': ' + e.keyCode );
+							| });
+				.info-block.info-block_bottom
+					.sand-area
+						.key-show Тут будет код клавиши
+
+					.sand-area
+						a.signle-link(href="https://learn.javascript.ru/keyboard-events") https://learn.javascript.ru/keyboard-events
+						br
+						a.signle-link(href="http://keycodes.atjayjo.com") http://keycodes.atjayjo.com/
+
+			.ms-section
+				.info-block.info-block_top
+					h2.heading Ждём загрузку DOM
+					pre.code-example
+						code.language-javascript
+							| $(document).ready(function() {
+							| 	/* Действия после загруки DOM */
+							| });
 		.ms-right
-			.ms-section.ms-section_right.demo__on-click
+			//- jQuery click() VS on('click')
+			.ms-section.ms-section_right
 				.info-block.info-block_top
 					h2.heading .on()
 					pre.code-example
@@ -53,8 +80,29 @@ body
 					.sand-area.awesome-button-wrap
 						a.awesome-button(href="#" data-num="1") Button
 
-			.ms-section Some right section
-			.ms-section Some right section
+			.ms-section.ms-section_right
+				.info-block.info-block_top
+					h2.heading Комбинация клавиш
+					pre.code-example
+						code.language-javascript
+							| var keyViewBox = $('.key-show');
+							| 
+							| $( document ).on('keypress keydown', function( e ) {
+							| 	if ( e.ctrlKey && e.keyCode == '67' ) alert('Не копируй у меня!');
+							| });
+
+				.info-block.info-block_bottom
+					.sand-area.awesome-button-wrap.key-input-wrap
+						a.awesome-button.key-input(href="#" data-num="1") Button
+
+			.ms-section.ms-section_right
+				.info-block.info-block_top
+					h2.heading Ждём загрузку DOM и картинок
+					pre.code-example
+						code.language-javascript
+							| $(window).load(function() {
+							| 	/* Действия после загруки DOM и картинок */
+							| });
 
 	script(src="bower_components/jquery/dist/jquery.min.js")
 	script(src="bower_components/multiscroll.js/vendors/jquery.easings.min.js")

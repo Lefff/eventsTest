@@ -39,6 +39,20 @@ html {
 	background-color: rgba(255,255,255,.1);
 	padding: 15px;
 }
+.sand-area {
+	margin-bottom: 25px;
+}
+.signle-link {
+	color: #fff;
+	text-decoration: none;
+	border-bottom: 1px solid #fff;
+	-webkit-transition: border-bottom-color .3s;
+	-o-transition: border-bottom-color .3s;
+	transition: border-bottom-color .3s;
+}
+.signle-link:hover {
+	border-bottom-color: transparent;
+}
 
 
 

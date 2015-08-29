@@ -69,5 +69,36 @@
 						.append( btnMarkup( 'DYN BTN' + copyNum, copyNum ) );
 				});
 
+
+
+		/**
+		 * ==========================
+		 * === События по нажатию ===
+		 * ==========================
+		 */
+		var keyViewBox = $('.key-show'),
+			keyInput   = $('.key-input-wrap');
+		$( document ).on('keypress keydown', function( e ) {
+			switch( e.keyCode ) {
+				case 37:
+					keyViewBox.text( e.type + ': ' + e.keyCode + ' - стрелка влево' );
+					break;
+				case 39:
+					keyViewBox.text( e.type + ': ' + e.keyCode + ' - стрелка вправо' );
+					break;
+
+				default:
+					keyViewBox.text( e.type + ': ' + e.keyCode );
+					break;
+			}
+
+			if ( e.ctrlKey && e.keyCode == '67' ) {
+				alert('Не копируй у меня!');
+			}
+
+			if( e.shiftKey && e.type == 'keypress' ) {
+				keyInput.find('.key-input').text( String.fromCharCode(e.keyCode) );
+			}
+		});
 	});
 })( jQuery );

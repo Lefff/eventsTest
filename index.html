@@ -29,11 +29,33 @@
           <div class="sand-area awesome-button-wrap"><a href="#" data-num="1" class="awesome-button">Button</a></div>
         </div>
       </div>
-      <div class="ms-section">Some section</div>
-      <div class="ms-section">Some section</div>
+      <div class="ms-section">
+        <div class="info-block info-block_top">
+          <h2 class="heading">События клавиатуры</h2>
+          <pre class="code-example"><code class="language-javascript">var keyViewBox = $('.key-show');
+ 
+$( document ).on('keypress keydown keyup', function( e ) {
+	keyViewBox.text( e.type + ': ' + e.keyCode );
+});</code></pre>
+        </div>
+        <div class="info-block info-block_bottom">
+          <div class="sand-area">
+            <div class="key-show">Тут будет код клавиши</div>
+          </div>
+          <div class="sand-area"><a href="https://learn.javascript.ru/keyboard-events" class="signle-link">https://learn.javascript.ru/keyboard-events</a><br/><a href="http://keycodes.atjayjo.com" class="signle-link">http://keycodes.atjayjo.com/</a></div>
+        </div>
+      </div>
+      <div class="ms-section">
+        <div class="info-block info-block_top">
+          <h2 class="heading">Ждём загрузку DOM</h2>
+          <pre class="code-example"><code class="language-javascript">$(document).ready(function() {
+	/* Действия после загруки DOM */
+});</code></pre>
+        </div>
+      </div>
     </div>
     <div class="ms-right">
-      <div class="ms-section ms-section_right demo__on-click">
+      <div class="ms-section ms-section_right">
         <div class="info-block info-block_top">
           <h2 class="heading">.on()</h2>
           <pre class="code-example"><code class="language-javascript">$('.parent-container').on('click', '.awesome-button', (function( e ) {
@@ -51,8 +73,27 @@
           <div class="sand-area awesome-button-wrap"><a href="#" data-num="1" class="awesome-button">Button</a></div>
         </div>
       </div>
-      <div class="ms-section">Some right section</div>
-      <div class="ms-section">Some right section</div>
+      <div class="ms-section ms-section_right">
+        <div class="info-block info-block_top">
+          <h2 class="heading">Комбинация клавиш</h2>
+          <pre class="code-example"><code class="language-javascript">var keyViewBox = $('.key-show');
+ 
+$( document ).on('keypress keydown', function( e ) {
+	if ( e.ctrlKey && e.keyCode == '67' ) alert('Не копируй у меня!');
+});</code></pre>
+        </div>
+        <div class="info-block info-block_bottom">
+          <div class="sand-area awesome-button-wrap key-input-wrap"><a href="#" data-num="1" class="awesome-button key-input">Button</a></div>
+        </div>
+      </div>
+      <div class="ms-section ms-section_right">
+        <div class="info-block info-block_top">
+          <h2 class="heading">Ждём загрузку DOM и картинок</h2>
+          <pre class="code-example"><code class="language-javascript">$(window).load(function() {
+	/* Действия после загруки DOM и картинок */
+});</code></pre>
+        </div>
+      </div>
     </div>
   </div>
   <script src="bower_components/jquery/dist/jquery.min.js"></script>
