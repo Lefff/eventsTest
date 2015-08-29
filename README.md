@@ -1,0 +1,2 @@
+# Events
+> Simple events example
