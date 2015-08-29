@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+html(lang="ru-RU")
+head
+	meta(charset="UTF-8")
+
+	title LS jQuery Events Demo
+
+	link(rel="stylesheet", href="https://fonts.googleapis.com/css?family=Open+Sans:400,700&subset=latin,cyrillic")
+	link(rel="stylesheet" href="bower_components/multiscroll.js/jquery.multiscroll.css")
+	link(rel="stylesheet" href="bower_components/prism/themes/prism-okaidia.css")
+	link(rel="stylesheet" href="css/main.css")
+body
+	.multiscroll.demo
+		.ms-left
+			.ms-section.demo__on-click
+				.info-block.info-block_top
+					h2.heading .click()
+					pre.code-example
+						code.language-javascript
+							| $('.awesome-button').click(function( e ) {
+							| 	var $this   = $( this ),
+							| 		copyNum = +$this.data('num') + 1,
+							| 		btnMark = '&lt;a class="awesome-button" href="#" data-num="' + copyNum + '">DYN BTN' + copyNum + '&lt;/a>';
+							| 
+							|	e.preventDefault();
+							| 
+							| 	$this.closest('.parent-container')
+							| 		 .append( btnMark );
+							| });
+				.info-block.info-block_bottom
+					.sand-area.awesome-button-wrap
+						a.awesome-button(href="#" data-num="1") Button
+
+			.ms-section Some section
+			.ms-section Some section
+		.ms-right
+			.ms-section.ms-section_right.demo__on-click
+				.info-block.info-block_top
+					h2.heading .on()
+					pre.code-example
+						code.language-javascript
+							| $('.parent-container').on('click', '.awesome-button', (function( e ) {
+							| 	var $this   = $( this ),
+							| 		copyNum = +$this.data('num') + 1,
+							| 		btnMark = '&lt;a class="awesome-button" href="#" data-num="' + copyNum + '">DYN BTN' + copyNum + '&lt;/a>';
+							| 
+							|	e.preventDefault();
+							| 
+							| 	$this.closest('.parent-container')
+							| 		 .append( btnMark );
+							| });
+				.info-block.info-block_bottom
+					.sand-area.awesome-button-wrap
+						a.awesome-button(href="#" data-num="1") Button
+
+			.ms-section Some right section
+			.ms-section Some right section
+
+	script(src="bower_components/jquery/dist/jquery.min.js")
+	script(src="bower_components/multiscroll.js/vendors/jquery.easings.min.js")
+	script(src="bower_components/multiscroll.js/jquery.multiscroll.min.js")
+	script(src="bower_components/prism/prism.js")
+	script(src="js/main.js")

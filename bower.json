@@ -1,0 +1,21 @@
+{
+  "name": "eventsDemo",
+  "version": "0.1.0",
+  "authors": [
+    "Timofey Ponomarev <timlefff@gmail.com>"
+  ],
+  "description": "Some demos for jQuery events",
+  "main": "index.html",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "multiscroll.js": "~0.1.7",
+    "prism": "~1.0.1"
+  }
+}

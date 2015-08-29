@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ru-RU"></html>
+<head>
+  <meta charset="UTF-8"/>
+  <title>LS jQuery Events Demo</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,700&amp;subset=latin,cyrillic"/>
+  <link rel="stylesheet" href="bower_components/multiscroll.js/jquery.multiscroll.css"/>
+  <link rel="stylesheet" href="bower_components/prism/themes/prism-okaidia.css"/>
+  <link rel="stylesheet" href="css/main.css"/>
+</head>
+<body>
+  <div class="multiscroll demo">
+    <div class="ms-left">
+      <div class="ms-section demo__on-click">
+        <div class="info-block info-block_top">
+          <h2 class="heading">.click()</h2>
+          <pre class="code-example"><code class="language-javascript">$('.awesome-button').click(function( e ) {
+	var $this   = $( this ),
+		copyNum = +$this.data('num') + 1,
+		btnMark = '&lt;a class="awesome-button" href="#" data-num="' + copyNum + '">DYN BTN' + copyNum + '&lt;/a>';
+ 
+	e.preventDefault();
+ 
+	$this.closest('.parent-container')
+		 .append( btnMark );
+});</code></pre>
+        </div>
+        <div class="info-block info-block_bottom">
+          <div class="sand-area awesome-button-wrap"><a href="#" data-num="1" class="awesome-button">Button</a></div>
+        </div>
+      </div>
+      <div class="ms-section">Some section</div>
+      <div class="ms-section">Some section</div>
+    </div>
+    <div class="ms-right">
+      <div class="ms-section ms-section_right demo__on-click">
+        <div class="info-block info-block_top">
+          <h2 class="heading">.on()</h2>
+          <pre class="code-example"><code class="language-javascript">$('.parent-container').on('click', '.awesome-button', (function( e ) {
+	var $this   = $( this ),
+		copyNum = +$this.data('num') + 1,
+		btnMark = '&lt;a class="awesome-button" href="#" data-num="' + copyNum + '">DYN BTN' + copyNum + '&lt;/a>';
+ 
+	e.preventDefault();
+ 
+	$this.closest('.parent-container')
+		 .append( btnMark );
+});</code></pre>
+        </div>
+        <div class="info-block info-block_bottom">
+          <div class="sand-area awesome-button-wrap"><a href="#" data-num="1" class="awesome-button">Button</a></div>
+        </div>
+      </div>
+      <div class="ms-section">Some right section</div>
+      <div class="ms-section">Some right section</div>
+    </div>
+  </div>
+  <script src="bower_components/jquery/dist/jquery.min.js"></script>
+  <script src="bower_components/multiscroll.js/vendors/jquery.easings.min.js"></script>
+  <script src="bower_components/multiscroll.js/jquery.multiscroll.min.js"></script>
+  <script src="bower_components/prism/prism.js"></script>
+  <script src="js/main.js"></script>
+</body>
